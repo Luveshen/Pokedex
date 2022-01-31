@@ -41,3 +41,4 @@ A simple docker file is provided for running a containarized version of the API 
 - Add more unit tests for higher code coverage
 - Introduce API versioning - allows for new "breaking changes" to be introduced without causing issues for existing clients and allowing them to switch over at their own rate.
 - Comment public methods
+- Cater for funtranslations rate limiting - only 60 calls are permitted per day, there should be logic added to cater for throttling and gracefully handling 429 responses. (The caching may also help with this).
