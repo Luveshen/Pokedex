@@ -26,7 +26,7 @@ Once the webapp is running, the API is exposed on the following two ports:
 ## Running Unit Tests (Pokedex.UnitTest)
 1) Download and install .NET 5.0
 2) Clone repo from GitHub
-3) Navigate to project folder (..\Pokedex\Pokedex)
+3) Navigate to project folder (..\Pokedex\Pokedex.UnitTest)
 4) Open preferred command prompt
 5) Run command ```dotnet test ```
 
