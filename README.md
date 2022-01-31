@@ -40,4 +40,4 @@ A simple docker file is provided for running a containarized version of the API 
 - Add advanced telemetry - by linking the logger to something like AppInsights, useful metrics and analytics can be captured and can help in spotting performance issues and bugs faster.
 - Add more unit tests for higher code coverage
 - Introduce API versioning - allows for new "breaking changes" to be introduced without causing issues for existing clients and allowing them to switch over at their own rate.
-- Commented code
+- Comment public methods
