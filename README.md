@@ -26,7 +26,7 @@ Once the webapp is running, the API is exposed on the following two ports:
 ## Running Unit Tests (Pokedex.UnitTest)
 1) Download and install .NET 5.0
 2) Clone repo from GitHub
-3) Navigate to project folder (..\Pokedex\Pokedex)
+3) Navigate to project folder (..\Pokedex\Pokedex.UnitTest)
 4) Open preferred command prompt
 5) Run command ```dotnet test ```
 
@@ -40,4 +40,5 @@ A simple docker file is provided for running a containarized version of the API 
 - Add advanced telemetry - by linking the logger to something like AppInsights, useful metrics and analytics can be captured and can help in spotting performance issues and bugs faster.
 - Add more unit tests for higher code coverage
 - Introduce API versioning - allows for new "breaking changes" to be introduced without causing issues for existing clients and allowing them to switch over at their own rate.
-- Commented code
+- Comment public methods
+- Cater for funtranslations rate limiting - only 60 calls are permitted per day, there should be logic added to cater for throttling and gracefully handling 429 responses. (The caching may also help with this).
