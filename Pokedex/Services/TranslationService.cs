@@ -18,7 +18,8 @@ namespace Pokedex.Services
             _logger = logger;
         }
 
-        public async Task<TranslationResponse> TranslateTextAsync(TranslationOption translationOption, string originalText)
+        public async Task<TranslationResponse> TranslateTextAsync(TranslationOption translationOption,
+            string originalText)
         {
             try
             {
@@ -31,8 +32,9 @@ namespace Pokedex.Services
                 {
                     return JsonConvert.DeserializeObject<TranslationResponse>(content);
                 }
-                
-                _logger.LogError($"Failed to translate description using option {nameof(translator)}. Error Message: {content}.");
+
+                _logger.LogError(
+                    $"Failed to translate description using option {nameof(translator)}. Error Message: {content}.");
                 return null;
             }
             catch (Exception e)
@@ -41,6 +43,5 @@ namespace Pokedex.Services
                 return null;
             }
         }
-        
     }
 }

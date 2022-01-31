@@ -1,5 +1,3 @@
-using System;
-using Pokedex;
 using Pokedex.Services;
 using Pokedex.Shared.DataTransferObjects;
 using Xunit;
@@ -16,14 +14,14 @@ namespace PokeDexUnitTests
 
             var caveResult = TranslationChooser.GetTranslationOption(cavePokemon);
             Assert.Equal(TranslationOption.YODA, caveResult);
-            
+
             var waterPokemon = CreatePokemonProtoType();
-            waterPokemon.Habitat = "water"; 
-            
+            waterPokemon.Habitat = "water";
+
             var waterResult = TranslationChooser.GetTranslationOption(waterPokemon);
             Assert.Equal(TranslationOption.SHAKESPEARE, waterResult);
         }
-        
+
         [Fact]
         public void IsLegendaryCheckTest()
         {
@@ -32,10 +30,10 @@ namespace PokeDexUnitTests
 
             var legendaryResult = TranslationChooser.GetTranslationOption(legendaryPokemon);
             Assert.Equal(TranslationOption.YODA, legendaryResult);
-            
+
             var normalPokemon = CreatePokemonProtoType();
-            normalPokemon.IsLegendary = false; 
-            
+            normalPokemon.IsLegendary = false;
+
             var normalResult = TranslationChooser.GetTranslationOption(normalPokemon);
             Assert.Equal(TranslationOption.SHAKESPEARE, normalResult);
         }

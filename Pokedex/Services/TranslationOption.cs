@@ -1,4 +1,4 @@
-namespace Pokedex
+namespace Pokedex.Services
 {
     public enum TranslationOption
     {
