@@ -63,6 +63,7 @@ namespace Pokedex.Services
 
         private async Task<PokemonResponse> GetPokemonResponseAsync(string pokemonName)
         {
+            pokemonName = pokemonName.ToLowerInvariant(); // pokemon names must be lower case 
             var pokemonGetResponse = await _pokemonRetrievalService.RetrievePokemonInfoAsync(pokemonName);
             if (pokemonGetResponse is null)
             {
@@ -97,7 +98,7 @@ namespace Pokedex.Services
             return new PokemonResponse
             {
                 Name = getResponse.Name,
-                Habitat = getResponse.Habitat.Name,
+                Habitat = getResponse.Habitat?.Name,
                 IsLegendary = getResponse.IsLegendary,
                 Description = description
             };
@@ -105,6 +106,10 @@ namespace Pokedex.Services
 
         private string HandleEscapeSequences(string text)
         {
+            if (text is null)
+            {
+                return null;
+            }
             return Regex.Replace(text, @"\r|\n|\t|\f", " ");
         }
 

@@ -24,7 +24,7 @@ namespace PokeDexUnitTests
 
             var habitatName = "fire";
             var description = "Breathes fire Raaawr.";
-            var charmanderName = "Charmander";
+            var charmanderName = "charmander";
             var isLegendary = true;
             
             mockRetrievalService.Setup(svc => svc.RetrievePokemonInfoAsync(charmanderName)).ReturnsAsync(
@@ -41,7 +41,7 @@ namespace PokeDexUnitTests
                         }
                     },
                     IsLegendary = isLegendary,
-                    Name = "Charmander"
+                    Name = charmanderName
                 });
 
             // Act
@@ -69,7 +69,7 @@ namespace PokeDexUnitTests
 
             var habitatName = "fire";
             var description = "Breathes fire Raaawr.";
-            var charmanderName = "Charmander";
+            var charmanderName = "charmander";
             var isLegendary = true;
             
             mockRetrievalService.Setup(svc => svc.RetrievePokemonInfoAsync(charmanderName)).ReturnsAsync(
@@ -86,7 +86,7 @@ namespace PokeDexUnitTests
                         }
                     },
                     IsLegendary = isLegendary,
-                    Name = "Charmander"
+                    Name = charmanderName
                 });
 
             var translatedDescription = "This is a translated description.";
